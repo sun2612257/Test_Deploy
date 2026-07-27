@@ -3,144 +3,158 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Portfolio & Links</title>
-
-  <!-- Bootstrap 5 CSS -->
+  <title>Beginner Portfolio Project</title>
+  
+  <!-- 1. Bootstrap 5 CSS CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap Icons -->
+  <!-- Bootstrap Icons CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
 
-  <!-- Custom CSS -->
+  <!-- 2. Custom CSS -->
   <style>
-    /* Background and global styles */
+    /* Light background for the whole page */
     body {
-      background-color: #f4f6f9;
-      color: #333333;
+      background-color: #f8f9fa;
       font-family: Arial, sans-serif;
     }
 
-    /* Profile Avatar Styling */
-    .profile-img {
-      width: 110px;
-      height: 110px;
-      object-fit: cover;
-      border: 4px solid #ffffff;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Subtle hover effect on project cards */
+    .project-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    /* Custom Card Styling */
-    .card {
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      transition: transform 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-3px);
-    }
-
-    /* Custom Link Buttons */
-    .link-btn {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 20px;
-      border-radius: 10px;
-      background-color: #ffffff;
-      color: #333333;
-      text-decoration: none;
-      font-weight: 600;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-      transition: background-color 0.2s ease, color 0.2s ease;
-    }
-
-    .link-btn:hover {
-      background-color: #0d6efd;
-      color: #ffffff;
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
     }
   </style>
 </head>
 <body>
 
-  <!-- Main Container -->
-  <div class="container py-5">
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-8 col-lg-6 text-center">
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">My Profile</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-        <!-- Header / Profile Section -->
-        <img src="https://via.placeholder.com/150" alt="Profile Picture" class="rounded-circle profile-img mb-3">
-        <h2 class="fw-bold mb-1">Heng Sunoudom</h2>
-        <p class="text-muted mb-3">Student & Tech Enthusiast</p>
-        <p class="small text-secondary mb-4">
-          Welcome to my personal page! 
-        </p>
+  <!-- Hero / Header Section -->
+  <header id="about" class="bg-white py-5 text-center border-bottom">
+    <div class="container">
+      <!-- Profile Avatar Placeholder -->
+      <div class="bg-primary text-white rounded-circle d-inline-flex justify-content-center align-items-center mb-3" style="width: 100px; height: 100px; font-size: 2.5rem;">
+        <i class="bi bi-person"></i>
+      </div>
+      <h1 class="fw-bold">Hello, I'm a Developer</h1>
+      <p class="text-muted lead">Learning Web Development, Programming, & Design</p>
+      <a href="#projects" class="btn btn-primary mt-2">View My Work</a>
+    </div>
+  </header>
 
-        <!-- Social Icons Row (Bootstrap Utility Classes) -->
-        <div class="d-flex justify-content-center gap-3 mb-4 fs-4 text-primary">
-          <a href="#" class="text-primary"><i class="bi bi-github"></i></a>
-          <a href="#" class="text-primary"><i class="bi bi-linkedin"></i></a>
-          <a href="#" class="text-primary"><i class="bi bi-envelope-fill"></i></a>
+  <!-- Skills Section -->
+  <section id="skills" class="py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-4">My Skills</h2>
+      <div class="row g-3 justify-content-center">
+        <div class="col-6 col-md-3">
+          <div class="p-3 bg-white rounded border">
+            <i class="bi bi-filetype-html text-danger fs-2"></i>
+            <h5 class="mt-2 mb-0">HTML5</h5>
+          </div>
         </div>
-
-        <hr class="my-4">
-
-        <!-- Section 1: Quick Links -->
-        <h5 class="fw-bold text-start mb-3"><i class="bi bi-link-45deg me-1"></i> Quick Links</h5>
-        <div class="d-flex flex-column gap-3 mb-5">
-          
-          <a href="#" class="link-btn">
-            <span><i class="bi bi-folder2-open me-2 text-primary"></i> View My Projects</span>
-            <i class="bi bi-arrow-right"></i>
-          </a>
-
-          <a href="#" class="link-btn">
-            <span><i class="bi bi-file-earmark-person me-2 text-primary"></i> Download Resume</span>
-            <i class="bi bi-arrow-right"></i>
-          </a>
-
-          <a href="#" class="link-btn">
-            <span><i class="bi bi-chat-dots me-2 text-primary"></i> Contact Me</span>
-            <i class="bi bi-arrow-right"></i>
-          </a>
-
+        <div class="col-6 col-md-3">
+          <div class="p-3 bg-white rounded border">
+            <i class="bi bi-filetype-css text-primary fs-2"></i>
+            <h5 class="mt-2 mb-0">CSS3</h5>
+          </div>
         </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 bg-white rounded border">
+            <i class="bi bi-bootstrap-fill text-purple text-info fs-2"></i>
+            <h5 class="mt-2 mb-0">Bootstrap</h5>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 bg-white rounded border">
+            <i class="bi bi-code-slash text-success fs-2"></i>
+            <h5 class="mt-2 mb-0">Logic & C</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Section 2: Projects Showcase -->
-        <h5 class="fw-bold text-start mb-3"><i class="bi bi-code-square me-1"></i> Recent Projects</h5>
+  <!-- Projects Section -->
+  <section id="projects" class="py-5 bg-white border-top">
+    <div class="container">
+      <h2 class="fw-bold text-center mb-4">Featured Projects</h2>
+      
+      <div class="row g-4">
         
-        <div class="row g-3 text-start">
-          
-          <!-- Project 1 -->
-          <div class="col-12 col-sm-6">
-            <div class="card p-3 h-100">
-              <span class="badge bg-primary-subtle text-primary w-auto mb-2 align-self-start">HTML & CSS</span>
-              <h6 class="fw-bold mb-1">Calculator UI</h6>
-              <p class="small text-muted mb-0">A simple layout practice project built with pure HTML and Bootstrap grid.</p>
+        <!-- Project 1 -->
+        <div class="col-md-4">
+          <div class="card h-100 project-card border">
+            <div class="card-body">
+              <span class="badge bg-primary mb-2">Web Design</span>
+              <h5 class="card-title fw-bold">Portfolio Landing Page</h5>
+              <p class="card-text text-muted">A clean and simple personal website built using HTML grid systems and Bootstrap components.</p>
+            </div>
+            <div class="card-footer bg-transparent border-0 pb-3">
+              <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
             </div>
           </div>
-
-          <!-- Project 2 -->
-          <div class="col-12 col-sm-6">
-            <div class="card p-3 h-100">
-              <span class="badge bg-success-subtle text-success w-auto mb-2 align-self-start">C Language</span>
-              <h6 class="fw-bold mb-1">Attendance System</h6>
-              <p class="small text-muted mb-0">A basic console application for managing employee access control.</p>
-            </div>
-          </div>
-
         </div>
 
-        <!-- Footer -->
-        <footer class="mt-5 text-muted small">
-          © 2026 Designed with HTML, Bootstrap & CSS.
-        </footer>
+        <!-- Project 2 -->
+        <div class="col-md-4">
+          <div class="card h-100 project-card border">
+            <div class="card-body">
+              <span class="badge bg-success mb-2">Programming</span>
+              <h5 class="card-title fw-bold">System Logic Script</h5>
+              <p class="card-text text-muted">A structured algorithm project focused on loops, conditionals, and data calculations.</p>
+            </div>
+            <div class="card-footer bg-transparent border-0 pb-3">
+              <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="col-md-4">
+          <div class="card h-100 project-card border">
+            <div class="card-body">
+              <span class="badge bg-warning text-dark mb-2">Math & Graphs</span>
+              <h5 class="card-title fw-bold">Calculus Visualizer</h5>
+              <p class="card-text text-muted">A visual guide and dataset layout designed to display 2D and 3D mathematical surfaces.</p>
+            </div>
+            <div class="card-footer bg-transparent border-0 pb-3">
+              <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Bootstrap 5 JS Bundle -->
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4 text-center">
+    <div class="container">
+      <p class="mb-0 small">&copy; 2026 My Beginner Portfolio. Built with HTML & Bootstrap.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JavaScript CDN -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
